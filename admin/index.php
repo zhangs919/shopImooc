@@ -60,7 +60,7 @@ $i=1; //初始化一级菜单的编号为1
                         <dl id="menu<?php echo $i;?>" style="display:none;">
                         <!--  循环输出二级菜单 	-->
                         <?php foreach($res as $sub_menu): ?>
-                            <dd><a href="listNode.php" target="mainFrame"><?php echo $i.$sub_menu['name']; ?></a></dd>
+                            <dd><a href="<?php if(isset($sub_menu['url'])) echo $sub_menu['url'].'.php';else echo '#';?>" target="mainFrame"><?php echo $i.$sub_menu['name']; ?></a></dd>
                         <?php endforeach; ?>  
                         </dl>	
                     </li>
